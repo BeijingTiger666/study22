@@ -18,6 +18,12 @@
             <bean class="com.study.MyServerImpl"></bean>
         </jaxws:serviceBean>
     </jaxws:server>
+    <bean id="newsServerImpl" class="com.study.NewsServerImpl"></bean>
+    <jaxws:endpoint id="newsServer" implementor="#newsServerImpl" address="/getNews" />
 <!--    <jaxws:endpoint id="helloService" implementor="com.eastcom.ws.impl.HelloServiceImp" address="/hello"/>-->
 
+<!--    <jaxws:endpoint id="MyServer2" address="/getWeatherByProvince2" implementor="com.study.MyServerImpl" >-->
+<!--        <jaxws:features> <ref local="logBean" /> </jaxws:features>-->
+<!--    </jaxws:endpoint>-->
+<!--    <bean id="logBean" class="org.apache.cxf.feature.LoggingFeature" />-->
 </beans>
