@@ -2,28 +2,45 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:jaxws="http://cxf.apache.org/jaxws"
+       xmlns:jaxrs="http://cxf.apache.org/jaxrs"
        xsi:schemaLocation=" http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans.xsd
-       http://cxf.apache.org/jaxws
-       http://cxf.apache.org/schemas/jaxws.xsd">
+    http://cxf.apache.org/jaxrs http://cxf.apache.org/schemas/jaxrs.xsd
+       http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
 
     <import resource="classpath:META-INF/cxf/cxf.xml"/>
     <import resource="classpath:META-INF/cxf/cxf-servlet.xml"/>
-    <!-- 定义webservice服务，相当于发布
+    <!-- 3.0以前不配可能会报错
     <import resource="classpath:META-INF/cxf/cxf-extension-http.xml" />
     <import resource="classpath:META-INF/cxf/cxf-extension-soap.xml" />-->
-    <jaxws:server id="MyServer" address="/getWeatherByProvince" serviceClass="com.study.WeatherServer">
-        <!--发布服务类  -->
-        <jaxws:serviceBean>
-            <bean class="com.study.MyServerImpl"></bean>
-        </jaxws:serviceBean>
-    </jaxws:server>
+<!--    两种方式定义webservice服务，相当于发布-->
     <bean id="newsServerImpl" class="com.study.NewsServerImpl"></bean>
-    <jaxws:endpoint id="newsServer" implementor="#newsServerImpl" address="/getNews" />
-<!--    <jaxws:endpoint id="helloService" implementor="com.eastcom.ws.impl.HelloServiceImp" address="/hello"/>-->
+    <jaxws:endpoint id="newsServer" implementor="#newsServerImpl" address="/news" />
 
-<!--    <jaxws:endpoint id="MyServer2" address="/getWeatherByProvince2" implementor="com.study.MyServerImpl" >-->
-<!--        <jaxws:features> <ref local="logBean" /> </jaxws:features>-->
-<!--    </jaxws:endpoint>-->
-<!--    <bean id="logBean" class="org.apache.cxf.feature.LoggingFeature" />-->
+    <jaxws:server id="MyServer" address="/weather" serviceClass="com.study.WeatherServer">
+        <jaxws:serviceBean><bean class="com.study.WeatherServerImpl"></bean></jaxws:serviceBean>
+    </jaxws:server>
+
+    <jaxrs:server id="studentService" address="/studentService">
+        <!-- 消息拦截器 -->
+        <jaxrs:inInterceptors>
+            <bean class="org.apache.cxf.interceptor.LoggingInInterceptor"></bean>
+        </jaxrs:inInterceptors>
+        <jaxrs:outInterceptors>
+            <bean class="org.apache.cxf.interceptor.LoggingOutInterceptor"></bean>
+        </jaxrs:outInterceptors>
+        <jaxrs:serviceBeans><bean class="com.study.StudentServiceImpl" /></jaxrs:serviceBeans>
+        <!-- 支持的协议 -->
+        <jaxrs:extensionMappings>
+            <entry key="json" value="application/json" />
+            <entry key="xml"  value="application/xml" />
+        </jaxrs:extensionMappings>
+        <!-- 编码格式 -->
+        <jaxrs:languageMappings>
+<!--            <entry key="en" value="en-gb"/>-->
+            <entry key="charset" value="utf-8"/>
+        </jaxrs:languageMappings>
+
+    </jaxrs:server>
+
 </beans>

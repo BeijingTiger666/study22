@@ -3,7 +3,7 @@ package com.study;
 import org.apache.cxf.jaxws.JaxWsProxyFactoryBean;
 import org.junit.Test;
 
-public class WSget {
+public class WStest {
     public static void main(String[] args) {
 //        调用WebService
         JaxWsProxyFactoryBean factory = new JaxWsProxyFactoryBean();
@@ -12,10 +12,8 @@ public class WSget {
 
 //        WeatherServer service = (WeatherServer) factory.create();
         WeatherServer service = (WeatherServer) factory.create();
-        System.out.println("[result]" + service.getWeather("hoojo"));
+        System.out.println(service.getWeather());
 
-        final String whan = service.getWeather("whan");
-        System.out.println(whan);
         // 创建WebService客户端代理工厂
 //        JaxWsProxyFactoryBean factory = new JaxWsProxyFactoryBean();
 //        // 判断是否抛出异常
@@ -36,11 +34,14 @@ public class WSget {
     public void sdfas(){
         JaxWsProxyFactoryBean factory = new JaxWsProxyFactoryBean();
         factory.setServiceClass(NewsServer.class);
-        factory.setAddress("http://localhost:8087/ws/getNews?wsdl");
-
-//        WeatherServer service = (WeatherServer) factory.create();
+        factory.setAddress("http://localhost:8080/ws/studentService/students?wsdl");
+//        http://localhost:8080/ws/studentService/studentxiaoming
+//        http://localhost:8080/ws/studentService/student
+//        http://localhost:8080/ws/studentService/students
+//        http://localhost:8080/ws/getNews
         NewsServer service = (NewsServer) factory.create();
-        final String whan = service.getNews("whan");
+        final String whan = service.getNews("beijing");
         System.out.println(whan);
     }
+
 }

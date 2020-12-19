@@ -5,6 +5,7 @@ import org.springframework.stereotype.Component;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebService;
+import javax.ws.rs.GET;
 
 @Component
 @WebService(serviceName = "NewsSer",
@@ -15,8 +16,9 @@ import javax.jws.WebService;
 public class NewsServerImpl implements NewsServer {
     @WebMethod
     @Override
+    @GET
     public String getNews(@WebParam(name="province")String province) {
-        return "美国由于新冠疫情已几于崩溃边缘,各国警惕美国以发动战争转移国内矛盾";
+        return province+"--美国由于新冠疫情已几于崩溃边缘,各国警惕美国以发动战争转移国内矛盾";
     }
 
 }
