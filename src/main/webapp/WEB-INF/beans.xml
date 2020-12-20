@@ -40,7 +40,12 @@
 <!--            <entry key="en" value="en-gb"/>-->
             <entry key="charset" value="utf-8"/>
         </jaxrs:languageMappings>
-
+<!--json转换器-->
+        <jaxrs:providers>
+<!--            特别注意2.5版本的是JSONProvider  而3.0版本后好像找不到这个类-->
+<!--            <bean class="org.apache.cxf.jaxrs.provider.json.JsonMapObjectProvider"></bean>-->
+            <bean class="org.codehaus.jackson.jaxrs.JacksonJsonProvider"/>
+        </jaxrs:providers>
     </jaxrs:server>
 
 </beans>

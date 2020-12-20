@@ -54,4 +54,16 @@ public class StudentServiceImpl implements StudentService{
         map.put("riben4",new StudentVO(1, "斯嘉丽.约翰逊", 29, new Date(), 99));
         return map;
     }
+    @Override
+    public HashMap jsondemo() {
+        HashMap map = new HashMap();
+        map.put("riben",new StudentVO(1, "新恒结衣", 29, new Date(), 99));
+        map.put("riben2",new StudentVO(1, "波多野结衣", 29, new Date(), 99));
+        final ArrayList list = new ArrayList();
+        list.add(new Teacher("宝强","演员",2));
+        list.add(new Teacher("陈思成","导演",2));
+        list.add(new Teacher("魏大勋","编剧",2));
+        map.put("riben3",new StudentVO(1, "佟丽娅", 29, new Date(), 99,list));
+        return map;
+    }
 }
