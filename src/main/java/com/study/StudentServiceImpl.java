@@ -43,4 +43,15 @@ public class StudentServiceImpl implements StudentService{
         map.put("meiguo2", new Teacher("王老师","语文",2));
         return map;
     }
+    @Override
+    public Map<String, Object> mapdemo2() {
+        Map map = new HashMap();
+        map.put("meiguo", new Teacher("陈老师","语文",2));
+        map.put("meiguo2", new Teacher("王老师","语文",2));
+        map.put("riben",new StudentVO(1, "新恒结衣", 29, new Date(), 99));
+        map.put("riben2",new StudentVO(1, "波多野结衣", 29, new Date(), 99));
+        map.put("riben3",new StudentVO(1, "佟丽娅", 29, new Date(), 99));
+        map.put("riben4",new StudentVO(1, "斯嘉丽.约翰逊", 29, new Date(), 99));
+        return map;
+    }
 }

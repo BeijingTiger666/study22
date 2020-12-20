@@ -6,7 +6,7 @@ import javax.xml.bind.annotation.XmlTransient;
 import javax.xml.bind.annotation.XmlType;
 import java.io.Serializable;
 
-@XmlRootElement(name="teacher")
+@XmlRootElement(name="teacher",namespace="com.study.com.entity.Teacher")
 public class Teacher implements Serializable {
     @XmlElement(name = "teachername")
     private String teachername;

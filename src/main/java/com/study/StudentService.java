@@ -1,6 +1,7 @@
 package com.study;
 
 import com.study.com.entity.MapAdapter;
+import com.study.com.entity.MapAdapter2;
 import com.study.com.entity.StudentVO;
 import com.study.com.entity.Teacher;
 //import org.springframework.http.MediaType;
@@ -10,6 +11,7 @@ import javax.jws.WebService;
 import javax.ws.rs.*;
 
 import javax.ws.rs.core.MediaType;
+import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import java.util.List;
 import java.util.Map;
@@ -40,6 +42,11 @@ public interface StudentService{
     @Produces(value = MediaType.APPLICATION_XML)
     @XmlJavaTypeAdapter(MapAdapter.class)
     Map<String, Teacher> mapdemo();
-
+    @WebMethod
+    @GET
+    @Path(value ="/mapdemo2")
+    @Produces(value = MediaType.APPLICATION_XML)
+    @XmlJavaTypeAdapter(MapAdapter2.class)
+    Map<String, Object> mapdemo2();
 
 }
