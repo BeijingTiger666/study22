@@ -6,9 +6,7 @@ import org.springframework.stereotype.Component;
 
 import javax.jws.WebMethod;
 import javax.jws.WebService;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 @Component
 @WebService(serviceName = "StudentSer", endpointInterface= "com.study.StudentService")
@@ -38,5 +36,11 @@ public class StudentServiceImpl implements StudentService{
         return new StudentVO(Integer.parseInt(sNo),"丫丫好美",29, new Date(),99);
     }
 
-
+    @Override
+    public Map<String, Teacher> mapdemo() {
+        Map map = new HashMap();
+        map.put("meiguo", new Teacher("陈老师","语文",2));
+        map.put("meiguo2", new Teacher("王老师","语文",2));
+        return map;
+    }
 }
