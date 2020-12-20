@@ -43,31 +43,28 @@
 <!--json转换器-->
         <jaxrs:providers>
 <!-- 特别注意2.5版本的是JSONProvider 而3.0版本后好像找不到这个类 <bean class="org.apache.cxf.jaxrs.provider.json.JsonMapObjectProvider"></bean>-->
-<!--            <bean class="com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider"/>-->
-            <bean class="org.codehaus.jackson.jaxrs.JacksonJsonProvider">
-                <property name="mapper" ref="jacksonMapper">
-                </property>
+<!--            很多jar包里都有provider,随你挑 一下两个provider分别对应mpperf和mapperc-->
+            <bean class="com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider">
+                <property name="mapper" ref="mapperf"></property>
             </bean>
-
-
-            　　<!-- 用于从json串中获取的字符串，转化成Date类型
-            serializationInclusion -->
-<!--            <bean id="dateHandler" class="com.goldenvista.scaffold.utils.date.DateParameterHandler">-->
-<!--                <property name="format" value="yyyy-MM-dd"></property>-->
-<!--            </bean>-->
-<!--            　　-->
-<!--            　　&lt;!&ndash; 用于从json串中获取的字符串，转化成Date类型 &ndash;&gt;-->
-<!--            <bean id="dateTimeHandler" class="com.goldenvista.scaffold.utils.date.DateParameterHandler">-->
-<!--                <property name="format" value="yyyy-MM-dd HH:mm:ss"></property>-->
+<!--            <bean class="org.codehaus.jackson.jaxrs.JacksonJsonProvider">-->
+<!--                <property name="mapper" ref="mapperc"></property>-->
 <!--            </bean>-->
         </jaxrs:providers>
     </jaxrs:server>
-    <bean id="jacksonMapper" class="org.codehaus.jackson.map.ObjectMapper">
-        <property name="dateFormat">
-            <bean class="java.text.SimpleDateFormat">
-                <constructor-arg value="yyyy-MM-dd HH:mm:ss"/>
-            </bean>
-        </property>
-        <property name="serializationConfig.serializationInclusion" value="NON_NULL"></property>
-    </bean>
+<!--    <bean id="mapperc" class="org.codehaus.jackson.map.ObjectMapper">-->
+<!--        <property name="dateFormat">-->
+<!--            <bean class="java.text.SimpleDateFormat">-->
+<!--                <constructor-arg value="yyyy-MM-dd HH:mm:ss"/>-->
+<!--            </bean>-->
+<!--        </property>-->
+<!--        <property name="serializationConfig.serializationInclusion" value="NON_NULL"></property>-->
+<!--    </bean>-->
+        <bean id="mapperf" class="com.fasterxml.jackson.databind.ObjectMapper">
+            <property name="dateFormat">
+                <bean class="java.text.SimpleDateFormat">
+                    <constructor-arg value="yyyy-MM-dd HH:mm:ss"/>
+                </bean>
+            </property>
+        </bean>
 </beans>
