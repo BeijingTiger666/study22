@@ -1,6 +1,8 @@
 package com.study;
 
 import com.study.com.entity.*;
+import com.study.com.entity.req.ST_INPUT;
+import com.study.com.entity.req.ST_OUTPUT;
 //import org.springframework.http.MediaType;
 
 import javax.jws.WebMethod;
@@ -21,7 +23,6 @@ public interface StudentService{
     @GET
     @Path(value = "/students")
     @Produces(MediaType.APPLICATION_XML)
-    @HeaderParam(value = MediaType.APPLICATION_XML)
     List<StudentVO> students();
     @WebMethod
     @GET
@@ -49,9 +50,8 @@ public interface StudentService{
     Map<String, Object> mapdemo2();
     @WebMethod
     @GET
-    @Path(value ="/jsondemo")
+    @Path(value ="/mapdemo4json")
     @Produces(value = MediaType.APPLICATION_JSON)
-//    @Consumes(MediaType.APPLICATION_JSON)
     HashMap jsondemo();
 
 }

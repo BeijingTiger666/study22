@@ -1,11 +1,18 @@
 package com.study;
 
+import com.study.com.entity.Aihao;
 import com.study.com.entity.StudentVO;
 import com.study.com.entity.Teacher;
+import com.study.com.entity.XMLUtil;
+import com.study.com.entity.req.ST_BODY;
+import com.study.com.entity.req.ST_HEAD;
+import com.study.com.entity.req.ST_INPUT;
+import com.study.com.entity.req.ST_OUTPUT;
 import org.springframework.stereotype.Component;
 
 import javax.jws.WebMethod;
 import javax.jws.WebService;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 @Component
@@ -23,12 +30,10 @@ public class StudentServiceImpl implements StudentService{
 
     @WebMethod
     public StudentVO studentxiaoming() {
-        final StudentVO t = new StudentVO(1, "小明", 29, new Date(), 99);
-        final ArrayList list = new ArrayList();
-        list.add(new Teacher("张老师","数学",1));
-        list.add(new Teacher("王老师","语文",2));
-        t.setTeachers(list);
-        return t;
+        HashMap map = new HashMap();
+        map.put("aihao1", new Aihao(1,"吃饭"));
+        map.put("aihao1", new Aihao(1,"睡觉"));
+        return new StudentVO(1,"丫丫好美",29, new Date(),99,null, map);
     }
 
     @WebMethod
@@ -66,4 +71,6 @@ public class StudentServiceImpl implements StudentService{
         map.put("riben3",new StudentVO(1, "佟丽娅", 29, new Date(), 99,list));
         return map;
     }
+
+
 }

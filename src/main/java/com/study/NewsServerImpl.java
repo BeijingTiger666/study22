@@ -16,7 +16,6 @@ import javax.ws.rs.GET;
 public class NewsServerImpl implements NewsServer {
     @WebMethod
     @Override
-    @GET
     public String getNews(@WebParam(name="province")String province) {
         return province+"--美国由于新冠疫情已几于崩溃边缘,各国警惕美国以发动战争转移国内矛盾";
     }

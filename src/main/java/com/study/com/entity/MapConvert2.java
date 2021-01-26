@@ -2,19 +2,20 @@ package com.study.com.entity;
 
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlSeeAlso;
+import javax.xml.bind.annotation.XmlTransient;
 import java.util.ArrayList;
 import java.util.List;
 
 @XmlRootElement(name="map")
 @XmlSeeAlso({Teacher.class,StudentVO.class})
 public class MapConvert2 {
-    public static class Entry<Object> {
+    public static class Entry2<Object> {
         private String key;
         private Object value;
-        public Entry() {
+        public Entry2() {
             super();
         }
-        public Entry(String key, Object value) {
+        public Entry2(String key, Object value) {
             super();
             this.key = key;
             this.value = value;
@@ -32,11 +33,12 @@ public class MapConvert2 {
             this.value = value;
         }
     }
-    private List<Entry> entries = new ArrayList<>();
-    public List<Entry> getEntries() {
-        return entries;
+    private List<Entry2> entries2 = new ArrayList<>();   // @XmlTransient
+
+    public List<Entry2> getEntries() {
+        return entries2;
     }
-    public void setEntries(List<Entry> entries) {
-        this.entries = entries;
+    public void setEntries(List<Entry2> entries) {
+        this.entries2 = entries;
     }
 }
