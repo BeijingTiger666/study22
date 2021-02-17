@@ -1,18 +1,17 @@
-package com.study;
+package com.study.ws.service;
 
 import org.springframework.stereotype.Component;
 
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebService;
-import javax.ws.rs.GET;
 
 @Component
 @WebService(serviceName = "NewsSer",
 //        portName = "WeatherSer",
 //        targetNamespace = "http://ws.chinaunicom.cn/DepartmentInfoSer/",
 //        wsdlLocation = "classpath:wsdl/SB_SDM_SDM_ImportItemInfoSrv.wsdl",
-        endpointInterface= "com.study.NewsServer")
+        endpointInterface= "com.study.ws.service.NewsServer")
 public class NewsServerImpl implements NewsServer {
     @WebMethod
     @Override

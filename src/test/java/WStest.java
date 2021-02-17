@@ -1,5 +1,5 @@
-package com.study;
-
+import com.study.ws.service.NewsServer;
+import com.study.ws.service.WeatherServer;
 import org.apache.cxf.jaxws.JaxWsProxyFactoryBean;
 import org.junit.Test;
 import org.w3c.dom.Document;

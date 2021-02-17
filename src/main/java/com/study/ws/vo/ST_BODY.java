@@ -1,10 +1,10 @@
-package com.study.com.entity.req;
+package com.study.ws.vo;
 
 import javax.xml.bind.annotation.*;
 
-@XmlRootElement(name = "st_body",namespace = "com.study.com.entity.req.ST_BODY")
+@XmlRootElement(name = "st_body",namespace = "com.study.ws.vo.ST_BODY")
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "st_body",namespace = "com.study.com.entity.req.ST_BODY")
+@XmlType(name = "st_body",namespace = "com.study.ws.vo.ST_BODY")
 public class ST_BODY {
     @XmlElement(name = "OPERATE_TYPE", required = true)
     protected String operateTYPE;

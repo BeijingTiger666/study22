@@ -1,10 +1,10 @@
-package com.study.com.entity.req;
+package com.study.ws.vo;
 
 import javax.xml.bind.annotation.*;
 
-@XmlRootElement(name = "st_head",namespace = "com.study.com.entity.req.ST_HEAD")
+@XmlRootElement(name = "st_head",namespace = "com.study.ws.vo.ST_HEAD")
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "st_head",namespace = "com.study.com.entity.req.ST_HEAD")
+@XmlType(name = "st_head",namespace = "com.study.ws.vo.ST_HEAD")
 
 public class ST_HEAD {
     @XmlElement(name = "ORIG_DOMAIN", required = true)

@@ -1,8 +1,7 @@
-package com.study;
-
-import com.study.com.entity.req.ST_BODY;
-import com.study.com.entity.req.ST_HEAD;
-import com.study.com.entity.req.ST_INPUT;
+import com.study.ws.service.StudentService;
+import com.study.ws.vo.ST_BODY;
+import com.study.ws.vo.ST_HEAD;
+import com.study.ws.vo.ST_INPUT;
 import org.apache.cxf.jaxws.JaxWsProxyFactoryBean;
 import org.junit.Test;
 import org.w3c.dom.Document;

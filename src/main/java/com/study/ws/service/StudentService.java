@@ -1,17 +1,16 @@
-package com.study;
+package com.study.ws.service;
 
-import com.study.com.entity.*;
-import com.study.com.entity.req.ST_INPUT;
-import com.study.com.entity.req.ST_OUTPUT;
+import com.study.ws.entity.MapAdapter;
+import com.study.ws.entity.MapAdapter2;
+import com.study.ws.entity.StudentVO;
+import com.study.ws.entity.Teacher;
 //import org.springframework.http.MediaType;
 
 import javax.jws.WebMethod;
-import javax.jws.WebParam;
 import javax.jws.WebService;
 import javax.ws.rs.*;
 
 import javax.ws.rs.core.MediaType;
-import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import java.util.HashMap;
 import java.util.List;

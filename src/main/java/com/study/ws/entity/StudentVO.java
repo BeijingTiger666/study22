@@ -1,7 +1,4 @@
-package com.study.com.entity;
-
-import com.study.com.entity.req.ST_BODY;
-import com.study.com.entity.req.ST_HEAD;
+package com.study.ws.entity;
 
 import javax.xml.bind.annotation.*;
 import java.io.Serializable;
@@ -9,7 +6,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
-@XmlRootElement(name="student",namespace = "com.study.com.entity.StudentVO")
+@XmlRootElement(name="student",namespace = "com.study.ws.entity.StudentVO")
 @XmlType(propOrder = {"sname","birth","age","sid","score","teachers","aihao"})
 @XmlSeeAlso({Aihao.class})
 public class StudentVO  implements Serializable {

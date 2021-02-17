@@ -1,12 +1,9 @@
-package com.study.com.entity;
-
-import com.study.com.entity.req.ST_BODY;
-import com.study.com.entity.req.ST_HEAD;
+package com.study.ws.entity;
 
 import javax.xml.bind.annotation.*;
 import java.io.Serializable;
 
-@XmlRootElement(name = "aihao",namespace = "com.study.com.entity.Aihao")
+@XmlRootElement(name = "aihao",namespace = "com.study.ws.entity.Aihao")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Aihao implements Serializable {
     @XmlElement(name = "id")

@@ -1,4 +1,4 @@
-package com.study.com.entity;
+package com.study.ws.entity;
 
 import org.jdom.Document;
 import org.jdom.Element;

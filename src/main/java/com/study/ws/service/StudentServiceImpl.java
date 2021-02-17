@@ -1,22 +1,16 @@
-package com.study;
+package com.study.ws.service;
 
-import com.study.com.entity.Aihao;
-import com.study.com.entity.StudentVO;
-import com.study.com.entity.Teacher;
-import com.study.com.entity.XMLUtil;
-import com.study.com.entity.req.ST_BODY;
-import com.study.com.entity.req.ST_HEAD;
-import com.study.com.entity.req.ST_INPUT;
-import com.study.com.entity.req.ST_OUTPUT;
+import com.study.ws.entity.Aihao;
+import com.study.ws.entity.StudentVO;
+import com.study.ws.entity.Teacher;
 import org.springframework.stereotype.Component;
 
 import javax.jws.WebMethod;
 import javax.jws.WebService;
-import java.text.SimpleDateFormat;
 import java.util.*;
 
 @Component
-@WebService(serviceName = "StudentSer", endpointInterface= "com.study.StudentService")
+@WebService(serviceName = "StudentSer", endpointInterface= "com.study.ws.service.StudentService")
 public class StudentServiceImpl implements StudentService{
 
     @WebMethod

@@ -1,4 +1,4 @@
-package com.study.com.entity;
+package com.study.ws.entity;
 
 import javax.xml.bind.annotation.adapters.XmlAdapter;
 import java.util.HashMap;
