@@ -1,9 +1,7 @@
-package com.study.ws.service;
+package com.study.ws.ws;
 
-import com.study.ws.entity.MapAdapter;
-import com.study.ws.entity.MapAdapter2;
-import com.study.ws.entity.StudentVO;
-import com.study.ws.entity.Teacher;
+import com.study.ws.ws.entity.MapAdapter;
+import com.study.ws.ws.entity.StudentVO;
 //import org.springframework.http.MediaType;
 
 import javax.jws.WebMethod;
@@ -37,15 +35,9 @@ public interface StudentService{
     StudentVO student(@PathParam("sNo") String sNo);
     @WebMethod
     @GET
-    @Path(value ="/mapdemo")
-    @Produces(value = MediaType.APPLICATION_XML)
-    @XmlJavaTypeAdapter(MapAdapter.class)
-    Map<String, Teacher> mapdemo();
-    @WebMethod
-    @GET
     @Path(value ="/mapdemo2")
     @Produces(value = MediaType.APPLICATION_XML)
-    @XmlJavaTypeAdapter(MapAdapter2.class)
+    @XmlJavaTypeAdapter(MapAdapter.class)
     Map<String, Object> mapdemo2();
     @WebMethod
     @GET

@@ -14,11 +14,11 @@
     <import resource="classpath:META-INF/cxf/cxf-extension-http.xml" />
     <import resource="classpath:META-INF/cxf/cxf-extension-soap.xml" />-->
 <!--    两种方式定义webservice服务，相当于发布-->
-    <bean id="newsServerImpl" class="com.study.ws.service.NewsServerImpl"></bean>
+    <bean id="newsServerImpl" class="com.study.ws.ws.NewsServerImpl"></bean>
     <jaxws:endpoint id="newsServer" implementor="#newsServerImpl" address="/news" />
 
-    <jaxws:server id="MyServer" address="/weather" serviceClass="com.study.ws.service.WeatherServer">
-        <jaxws:serviceBean><bean class="com.study.ws.service.WeatherServerImpl"></bean></jaxws:serviceBean>
+    <jaxws:server id="MyServer" address="/weather" serviceClass="com.study.ws.ws.WeatherServer">
+        <jaxws:serviceBean><bean class="com.study.ws.ws.WeatherServerImpl"></bean></jaxws:serviceBean>
     </jaxws:server>
 
 <!--    jaxrs   发布restful接口 -->
@@ -30,7 +30,7 @@
         <jaxrs:outInterceptors>
             <bean class="org.apache.cxf.interceptor.LoggingOutInterceptor"></bean>
         </jaxrs:outInterceptors>
-        <jaxrs:serviceBeans><bean class="com.study.ws.service.StudentServiceImpl" /></jaxrs:serviceBeans>
+        <jaxrs:serviceBeans><bean class="com.study.ws.ws.StudentServiceImpl" /></jaxrs:serviceBeans>
         <!-- 支持的协议 -->
         <jaxrs:extensionMappings>
             <entry key="json" value="application/json" />

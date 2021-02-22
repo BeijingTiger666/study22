@@ -1,7 +1,5 @@
-import com.study.ws.service.StudentService;
-import com.study.ws.vo.ST_BODY;
-import com.study.ws.vo.ST_HEAD;
-import com.study.ws.vo.ST_INPUT;
+package com.study.ws.test;
+
 import org.apache.cxf.jaxws.JaxWsProxyFactoryBean;
 import org.junit.Test;
 import org.w3c.dom.Document;
@@ -14,27 +12,15 @@ import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import java.io.*;
-import java.net.HttpURLConnection;
+import java.net.*;
 import java.net.MalformedURLException;
-import java.net.URL;
 
-public class WStest2 {
+public class WStest {
     public static void main(String[] args) {
-        JaxWsProxyFactoryBean factory = new JaxWsProxyFactoryBean();
-        factory.setServiceClass(StudentService.class);
-              factory.setAddress("http://localhost:8080/ws/studentService/consudemo");
-        //   factory.setAddress("http://localhost:8080/ws/studentService/");
-//        factory.
-        StudentService service = (StudentService) factory.create();
-        final ST_HEAD st_head = new ST_HEAD("product", "productservice", "getdetail");
-        final ST_BODY st_body = new ST_BODY("readpnly", "11", "oracle");
-        ST_INPUT in = new ST_INPUT(st_head,st_body);
-//        System.out.println(service.consudemo(in));
-        factory.setAddress("http://localhost:8080/ws/studentService/consudemo");
+
     }
     @Test
     public void sdfas(){
-
     }
 @Test
     public void testPost() {

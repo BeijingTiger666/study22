@@ -1,8 +1,8 @@
-package com.study.ws.service;
+package com.study.ws.ws;
 
-import com.study.ws.entity.Aihao;
-import com.study.ws.entity.StudentVO;
-import com.study.ws.entity.Teacher;
+import com.study.ws.ws.entity.Aihao;
+import com.study.ws.ws.entity.StudentVO;
+import com.study.ws.ws.entity.Teacher;
 import org.springframework.stereotype.Component;
 
 import javax.jws.WebMethod;
@@ -10,7 +10,7 @@ import javax.jws.WebService;
 import java.util.*;
 
 @Component
-@WebService(serviceName = "StudentSer", endpointInterface= "com.study.ws.service.StudentService")
+@WebService(serviceName = "StudentSer", endpointInterface= "com.study.ws.ws.StudentService")
 public class StudentServiceImpl implements StudentService{
 
     @WebMethod
@@ -35,13 +35,6 @@ public class StudentServiceImpl implements StudentService{
         return new StudentVO(Integer.parseInt(sNo),"丫丫好美",29, new Date(),99);
     }
 
-    @Override
-    public Map<String, Teacher> mapdemo() {
-        Map map = new HashMap();
-        map.put("meiguo", new Teacher("陈老师","语文",2));
-        map.put("meiguo2", new Teacher("王老师","语文",2));
-        return map;
-    }
     @Override
     public Map<String, Object> mapdemo2() {
         Map map = new HashMap();

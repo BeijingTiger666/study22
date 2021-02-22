@@ -1,6 +1,5 @@
-package com.study.ws.entity;
+package com.study.ws.util;
 
-import org.junit.Test;
 
 import javax.xml.soap.*;
 import javax.xml.transform.Source;
@@ -11,6 +10,7 @@ import javax.xml.transform.stream.StreamResult;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 // https://blog.csdn.net/weixin_39494923/article/details/79348379
+@Deprecated  //暂时没用,等闲时在研究
 public class SoapUtil {
     private String addressUrl="http://XXXXXXXX";
     /**
@@ -22,7 +22,7 @@ public class SoapUtil {
      * @param orisys       来源系统标识
      * @return
      */
-    public String sendSoapXml(String bodyJsonStr,
+    /*public String sendSoapXml(String bodyJsonStr,
                               String svcname, String svccode,
                               String svcver, String orisys 
                                ) {
@@ -249,5 +249,5 @@ public class SoapUtil {
 //                String s = ((ByteArrayOutputStream) result.getOutputStream()).toString();
 //                System.out.println("返回报文,如下：");
 //                System.out.print( s);
-    }
+    }*/
 }

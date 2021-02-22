@@ -1,0 +1,14 @@
+package
+
+import [(${import})];
+import lombok.Data;
+
+@Data
+public class [(${className})]{
+
+--------------------
+
+[[# th:each="item : ${movies}"]][(${item.sname})][/]
+
+
+}

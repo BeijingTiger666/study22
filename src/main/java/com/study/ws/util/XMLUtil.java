@@ -1,4 +1,4 @@
-package com.study.ws.entity;
+package com.study.ws.util;
 
 import org.jdom.Document;
 import org.jdom.Element;
@@ -13,7 +13,9 @@ import java.util.Map;
 import org.jdom.input.SAXBuilder;
 import org.xml.sax.InputSource;
 
+@Deprecated  //暂时没用,等闲时在研究
 public class XMLUtil {
+    /*
 public static Document strXmlToDocument(String parseStrXml){
     StringReader read = new StringReader(parseStrXml);
     InputSource source = new InputSource(read);
@@ -59,5 +61,5 @@ public static Document strXmlToDocument(String parseStrXml){
             }
         }
         return resultmap;
-    }
+    }*/
 }

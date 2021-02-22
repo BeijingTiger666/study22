@@ -1,4 +1,4 @@
-package com.study.ws.entity;
+package com.study.ws.ws.entity;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -6,7 +6,7 @@ import javax.xml.bind.annotation.XmlTransient;
 import javax.xml.bind.annotation.XmlType;
 import java.io.Serializable;
 
-@XmlRootElement(name="teacher",namespace="com.study.ws.entity.Teacher")
+@XmlRootElement(name="teacher",namespace="com.study.ws.ws.entity.Teacher")
 public class Teacher implements Serializable {
     @XmlElement(name = "teachername")
     private String teachername;

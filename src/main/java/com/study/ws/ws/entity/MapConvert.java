@@ -1,18 +1,20 @@
-package com.study.ws.entity;
+package com.study.ws.ws.entity;
 
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlSeeAlso;
 import java.util.ArrayList;
 import java.util.List;
 
-@XmlRootElement(name="teachers")
+@XmlRootElement(name="map")
+@XmlSeeAlso({Teacher.class,StudentVO.class})
 public class MapConvert {
-    public static class Entry{
+    public static class Entry<Object> {
         private String key;
-        private Teacher value;
+        private Object value;
         public Entry() {
             super();
         }
-        public Entry(String key, Teacher value) {
+        public Entry(String key, Object value) {
             super();
             this.key = key;
             this.value = value;
@@ -23,18 +25,19 @@ public class MapConvert {
         public void setKey(String key) {
             this.key = key;
         }
-        public Teacher getValue() {
+        public Object getValue() {
             return value;
         }
-        public void setValue(Teacher value) {
+        public void setValue(Object value) {
             this.value = value;
         }
     }
-    private List<Entry> entries = new ArrayList<>();
+    private List<Entry> entries2 = new ArrayList<>();   // @XmlTransient
+
     public List<Entry> getEntries() {
-        return entries;
+        return entries2;
     }
     public void setEntries(List<Entry> entries) {
-        this.entries = entries;
+        this.entries2 = entries;
     }
 }
