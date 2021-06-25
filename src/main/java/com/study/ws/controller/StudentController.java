@@ -18,9 +18,10 @@ public class StudentController {
     @RequestMapping("/st")
     public ModelAndView test( ) throws SQLException {
         ModelAndView mv = new ModelAndView();
-        mv.addObject("msg", "<h5>nice!</h5>");
-        mv.addObject("msg2", "<h5>nice!</h5>");
-        mv.addObject("msg3", "<h5>nice!</h5>");
+        mv.addObject("inlinevalue", "行内写法值");
+        mv.addObject("msg", "from 数据库");
+        mv.addObject("msg2", "<h5>这是从数据库取出的数据2!</h5>");
+        mv.addObject("msg3", "<h5>这是从数据库取出的数据3!</h5>");
         mv.setViewName("/demo");
         return mv;
     }

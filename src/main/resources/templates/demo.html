@@ -1,7 +1,8 @@
 <!DOCTYPE html><html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head><meta charset="UTF-8"></head>
 <body>
-<h1 th:text="${msg}">哈哈</h1>
+<h1 th:text="${msg}">默认值</h1>
+<h1  >[[${inlinevalue}]]默认值,行内写法</h1>
 <h1>[[${msg2}]]行内和非行内的区别</h1>
 <h1>[(${msg3})]行内和非行内的区别</h1>
 

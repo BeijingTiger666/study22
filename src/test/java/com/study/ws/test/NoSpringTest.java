@@ -45,7 +45,7 @@ public class NoSpringTest {
         context.setVariable("items", items);
         context.setVariable("movies", movies);
 //        context.setVariable("item", items);
-        final String s = FileUtils.readFileToString(new File("E:\\AAAimportant\\idea2019workSpace\\study22\\src\\main\\resources\\templates\\entityModel.text"));
+        final String s = FileUtils.readFileToString(new File("D:\\AAwork\\ideaWorkSpace\\study22\\src\\main\\resources\\templates\\entityModel.text"));
         final TemplateSpec spec = new TemplateSpec(s, "TEXT");
 
         engine.process(spec, context, writer);
